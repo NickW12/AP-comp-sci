@@ -1,3 +1,4 @@
+//GitHub is dope
 import java.util.Scanner; //import Statement
 
 public class Lesson_03
