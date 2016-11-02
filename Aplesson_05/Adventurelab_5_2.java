@@ -1,68 +1,63 @@
 import java.util.Scanner;
-public class Adventurelab_5_3
+public class Adventurelab_5_2
 {
-	public static void main(String[]args);
+	public static void main(String[]args)
 	{
-		//user prompt "Something happens....do you a or b"
-		System.out.println("You come outside in the morning and there is a homeless man asking for change, are you going to give him change or not?");
-		String choice = kb.next();
+		Scanner kb = new Scanner(System.in);
+		String yes = "";
+		String straight = "";
+		String death = "";
+
+		System.out.println("You walk outisde in the morning ");
+		System.out.println(" There is a HOBO asking for chagne, will you say 'yes' or 'no'? ");
+		yes = kb.nextLine();
+
+		if (yes.equalsIgnoreCase("Yes")) 
+		{
+			System.out.println("You are on your way to the coffee shop when a car comes hurtling towards you, will you 'stand' or 'run'. ");
 		
-		if(choice.equals("No")){//1
-			System.out.println("You slip on spare change");
+			yes = kb.next();
 			
-			String.choice = kb.next();
-			if (choice.equals("Yes")){//1.1
-			System.out.println("You walk to the coffee shop to buy a latte");
-			String.choice = kb.next();
-			
-				if(choice.equals("No"))//1.1.1
+			if (yes.equalsIgnoreCase("Run")) 
+			{
+				System.out.println("You got out of the way, bot not others, will you help them, 'yes' or 'no'?");
+     
+				yes = kb.next();
+				
+				if (yes.equalsIgnoreCase("Yes")) 
 				{
-					System.out.println("You were left for dead and eaten by gargoils from narnia");
+					System.out.println("  ");
+					System.out.println("You are a hero!");
 				}
-				else//1.1.2
+				else if (yes.equalsIgnoreCase("No")) 
 				{
-					System.out.println("You got coffe and are now at work");
+					System.out.println("  ");
+					System.out.println("You Fricking Suck!");
 				}
 			}
-			else{//1.2
-				
-			}
-				
-				if(choice.equals())
-				{
-					System.out.println("You went the wrong way and got eaten by gargoils");
-				}
-				else
-				{
-					
-				}
+			else if (death.equalsIgnoreCase("stand")) 
+			{
+				System.out.println("Your dead!");
+        
+				death = kb.next();
 			}
 		}
-		else {//2
-			//prompt for choice 
-			choice = kb.next()
-			if (choice.equals("left"))//2.1
+		else if (yes.equalsIgnoreCase("No")) 
+		{
+			System.out.println("There is a man walking toward you about 6 foot ish, seems perfectly normal, unitl he pulls out a gun and says give me all your money,'give him your money' highly recommended, or 'dont'");
+        
+			yes = kb.nextLine();
+			
+			if (yes.equalsIgnoreCase("give him your money")) 
 			{
-				//prompt for choice
-				if (choice == b){//2.1.1
-					
-				}
-					//end of program 
-				else{//2.1.2
-					 
-				 }
-			}//end of program
-			//prompt for choice 
-			else{//2.2
-				//prompt for choice
-				if (choice == c){//2.2.1
-					
-				}
-				//end of program
-				else{//2.2.2
-					
-				}//end of program 
-			}		 
+				System.out.println("  ");
+				System.out.println("he killed you anyway...haha!!");
+			}	
+			else if (yes.equalsIgnoreCase("dont")) 
+			{
+				System.out.println("  ");
+				System.out.println("He kills you and then takes your money...haha!!");
+			}
 		}
 	}
 }
