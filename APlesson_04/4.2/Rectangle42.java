@@ -22,6 +22,7 @@ public class Rectangle43
 	public static void calcPerim()
 	{
 		perimeter = (2*l + 2*w + 2*h);
+		return 2*(l+w +h);
 	}
 	
 	public static void print()

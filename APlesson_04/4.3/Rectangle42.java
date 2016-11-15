@@ -1,8 +1,9 @@
 import java.util.Scanner;
-public class Rectangle
+public class Rectangle42
 {
 	static double l;
 	static double w;
+	static double h;
 	static double perimeter;
 	
 	public static void main(String[]args)
@@ -12,13 +13,16 @@ public class Rectangle
 		l = input.nextDouble();
 		System.out.println("The Width");
 		w = input.nextDouble();
+		System.out.println("The height");
+		h = input.nextDouble();
 		calcPerim();
 		print();
 	}
 	
 	public static void calcPerim()
 	{
-		perimeter = (2*l + 2*w);
+		perimeter = (2*l + 2*w + 2*h);
+		return 2*(l+w);
 	}
 	
 	public static void print()
