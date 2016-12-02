@@ -29,7 +29,7 @@ public class AverageDigits
 		while (num > 0)
 		{
 			digits++;
-			average = average + (number%10);
+			average = average + (num%10);
 			num/= 10;
 		}
 		average = average / digits;
