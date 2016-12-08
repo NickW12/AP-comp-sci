@@ -8,14 +8,19 @@ public class ReverseWord
 		System.out.println("Please Enter 5 names");
 		
 		
-		for(int i = 0; i < names.length; i++)
+		for(int i = 0; i < words.length; i++)
 		{
-			names[i] = kb.next();
+			words[i] = kb.next();
 		}
 		
-		for(String name : names)
+		for(String word : words)
 		{
-			System.out.println("\"" + name.length() + "\", ");
+			System.out.println("\"" + word.length() + "\", ");
 		}
 	}
+		public static void first(String [] words)
+		{
+			for (String word : words)
+				System.out.println(word[0]);
+		}
 }
