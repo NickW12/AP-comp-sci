@@ -1,20 +1,21 @@
+
 import java.util.Scanner;
 public class GameGun
 {
 	static int bulletCount = 96;
-	static int Clipsize = 16;
+	static int CLIPSIZE = 16;
 	static int shotCount = 16;
 	static String [] clip = new String [16];
 	
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		System.out.println("Out of bullets");
-		restClip();
+		System.out.println("No more bullets");
+		resetClip();
 		while (bulletCount > 0 || shotCount > 0)
 		{
-			System.out.println("Action: ");
-			String action = kb.nextLine();
+			System.out.println("Action Needed ");
+			String action = kb.nextLine().toUpperCase();
 			
 			if (action.equals("R"))
 			{
@@ -28,7 +29,7 @@ public class GameGun
 		}
 	}
 	
-	public static void restClip()
+	public static void resetClip()
 	{
 		for (int i = 0; i < clip.length; i++)
 		{
@@ -38,7 +39,7 @@ public class GameGun
 	
 	public static String shoot()
 	{
-		if (shotCount > 0)
+		if (shotCount < 0)
 		{
 			clip[shotCount-1] = "[]";
 			shotCount -= 1;
@@ -46,24 +47,24 @@ public class GameGun
 		}
 		else
 		{
-			System.out.println("Reload");
+			System.out.println("Reload!!!");
 		}
 		return "";
 	}
 	
 	public static void reload()
 	{
-		if (bulletCount >= Clipsize)
+		if (bulletCount >= CLIPSIZE)
 		{
-			bulletCount -= Clipsize;
-			shotCount = Clipsize;
+			bulletCount -= CLIPSIZE;
+			shotCount = CLIPSIZE;
 		}
 		else
 		{
 			shotCount = bulletCount;
 			bulletCount = 0;
 		}
-		restClip();
+		resetClip();
 		for (int i = 0; i < shotCount; i++)
 		{
 			clip[i] = " * ";
@@ -74,8 +75,8 @@ public class GameGun
 	public static void printClip()
 	{
 		String output = "";
-		output = "Bullets: \t" + bulletCount + "\nClip:\t";
-		for (int i = 0; i < Clipsize; i++)
+		output = "Bullets" + bulletCount + "Clip";
+		for (int i = 0; i < CLIPSIZE; i++)
 		{
 			output += clip[i];
 		}
