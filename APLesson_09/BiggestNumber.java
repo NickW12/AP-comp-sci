@@ -4,10 +4,12 @@ public class BiggestNumber
 	int Array;
 	int number;
 	int num;
+	static int [] numbers;
+	
 	public static void main(String[]args)
 	{
 		Scanner kb = new Scanner(System.in);
-		static int [] numbers = new int[10];
+		numbers = new int[10];
 	}
 	public static void fillArray()
 	{
@@ -17,16 +19,12 @@ public class BiggestNumber
 			int num = (int)((Math.random()* 101));
 			System.out.println(num);
 		}
-		public static void printArray()
+	}
+	public static void printArray()
+	{
+		for (int num : numbers)
 		{
-			for (String num : number)
-			{
-				System.out.print(num)
-			}
-		}
-		public static void getOdds()
-		{
-			
+			System.out.print(num);
 		}
 	}
 }
