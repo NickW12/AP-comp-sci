@@ -4,45 +4,31 @@ public class InvRun
 {
 	public static void main (String[]args)
 	{
-		String ITM = "";
-		String IN = "";
-		String CTS = "";
-		double P = 0;
-		
 		Scanner kb = new Scanner(System.in);
+		System.out.println("Enter item name: ");
+		String IN = kb.next();
+		System.out.println("Enter item manufacturer: ");
+		String ITM = kb.next();
 		System.out.println("Enter a category or a price? ||yes or no||");
-		String use = kb.nextLine();
+		String choice = kb.next();
+		InventoryItems item1;
 		
-		if (use.equals("yes") || use.equals("Yes"))
+		if(choice.equals("no"))
 		{
-			System.out.println("Enter a manufacturer ");
-			ITM = kb.nextLine();
-			
-			System.out.println("Enter an item ");
-			IN = kb.nextLine();
-			
-			System.out.println("Enter a category");
-			CTS = kb.nextLine();
-			
-			System.out.println("Enter a price");
-			P = kb.nextDouble();
-			
-			Inv rando = new Inv(ITM, IN, CTS, P);
-			
-			System.out.println(rando);
+			item1 = new InventoryItems(ITM, IN);
 		}
 		
 		else
 		{
-			System.out.println("Please enter a manufacturer ");
-			ITM = kb.nextLine();
+			System.out.println("Enter a category");
+			String CTS = kb.next();
 			
-			System.out.println("Please enter an item ");
-			IN = kb.nextLine();
+			System.out.println("Enter a price");
+			double P = kb.nextDouble();
 			
-			Inv rando = new Inv(ITM, IN);
+			item1 = new InventoryItems(ITM, IN, CTS, P);
 			
-			System.out.println(rando);
+			System.out.println(item1);
 		}
 	}
 }

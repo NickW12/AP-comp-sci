@@ -2,38 +2,31 @@ import java.util.Random;
 
 public class InventoryItems
 {
-	private String Itmmanufacture, itName, cats;
-	
+	private String manufacturer, name, category;
 	private int UPC;
+	private double price;
 	
-	private double precio;
-	
-	public void Inv(String ITM, String IN)
+	public InventoryItems(String ITM, String IN)
 	{
-	   Itmmanufacture = ITM;
-	   
-	   itName = IN;
-	   
-	   cats = "";
-	   
+	   manufacturer = ITM;
+	   name = IN;
+	   category = "";
 	   UPC = (int)(Math.random() * 1000000) + 1;
-	   
-	   precio = 0;
+	   price = 0.0;
 	}
-	public void Inv(String ITM, String IN, String CTS, double P)
+	
+	public InventoryItems(String ITM, String IN, String cat, double prc)
 	{
-	   Itmmanufacture = ITM;
-	   
-	   itName = IN;
-	   
-	   cats = CTS;
-	   
-	   UPC = (int)(Math.random() * 1000000);
-	   
-	   precio = P;
-	}	
+	   manufacturer = ITM;
+	   name = IN;
+	   category = cat;
+	   UPC = (int)(Math.random() * 1000000) + 1;
+	   price = prc;
+	}
+
+	
 	public String toString()
 	{
-	   return "Item Information" + "Manufacturer" + Itmmanufacture + "Item" + itName + "Category" + cats + "UPC" + UPC + "precio" + precio;
+	   return "Item Information..." + "\nManufacturer: " + manufacturer + "\nItem: " + name + "\nCategory: " + category + "\nUPC: " + UPC + "\nPrice: " + price;
 	}	
 }
