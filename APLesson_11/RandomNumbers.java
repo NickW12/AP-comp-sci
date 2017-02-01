@@ -1,22 +1,23 @@
 import java.util.Scanner;
-public class RandomNumbers11
+public class RandomNumbers
 {
 	public static void main(String[]args)
 	{
-		//filling the array
-		int[][]values = new int [4][4];
-		values [0][0] = 1;
-		values [1][1] = 2;
-		values [2][2] = 3;
-		values [3][3] = 4;
-		 
-		//print out the array
-		for(int i = 0; i < values.length; i++)
+		int [][] rannumbers = new int [4][4];
+		for (int i = 0; i < rannumbers.length; i++)
 		{
-			for(int j = 0; j < values[i].length; j++)
+			for (int j = 0; j < rannumbers[i].length; j++)
 			{
-				System.out.print(values[i][j]);
+				rannumbers[i][j] = (int)((Math.random()*20));
 			}
-		}	System.out.println ();
+		}
+		for (int i = 0; i < rannumbers.length; i++)
+		{
+			for (int j = 0; j < rannumbers[i].length; j++)
+			{
+				System.out.print(rannumbers[i][j] + "\t");
+			}
+			System.out.println("");
+		}
 	}
 }
